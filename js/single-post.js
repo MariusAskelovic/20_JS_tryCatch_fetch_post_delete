@@ -32,7 +32,8 @@ function postObjToHtml(pObj) {
   els.body.textContent = pObj.body;
   const tagsLiArr = tagsToEls(pObj.tags);
   els.tags.innerHTML = '';
-  tagsLiArr.forEach((liEl) => els.tags.append(liEl));
+  //   tagsLiArr.forEach((liEl) => els.tags.append(liEl));
+  els.tags.append(...tagsLiArr); // galimas ir toks, trumpesnis su spread (...)
 }
 
 function tagsToEls(tagsStringArr) {
