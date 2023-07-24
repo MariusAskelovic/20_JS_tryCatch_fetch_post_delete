@@ -30,4 +30,17 @@ fetch(urlDummyPosts)
 function postObjToHtml(pObj) {
   els.title.textContent = pObj.title;
   els.body.textContent = pObj.body;
+  const tagsLiArr = tagsToEls(pObj.tags);
+  els.tags.innerHTML = '';
+  tagsLiArr.forEach((liEl) => els.tags.append(liEl));
+}
+
+function tagsToEls(tagsStringArr) {
+  const elArr = tagsStringArr.map((tagString) => {
+    const liEl = document.createElement('li');
+    liEl.textContent = tagString;
+    liEl.className = 'column';
+    return liEl;
+  });
+  return elArr;
 }
