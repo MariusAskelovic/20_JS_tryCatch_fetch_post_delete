@@ -21,7 +21,13 @@ fetch(urlDummyPosts)
   .then((resp) => resp.json())
   .then((jsonObj) => {
     console.log(jsonObj);
+    postObjToHtml(jsonObj);
   })
   .catch((error) => {
     console.log(error);
   });
+
+function postObjToHtml(pObj) {
+  els.title.textContent = pObj.title;
+  els.body.textContent = pObj.body;
+}
