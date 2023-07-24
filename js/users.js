@@ -10,7 +10,6 @@ fetch(url5Users)
     const userObj = oneObj.users;
     console.log('userObj ===', userObj);
     makeUsersLiEl(userObj);
-    // makeUsersLiEl(usersSortedByName(userObj));
     sortBtnEl.addEventListener('click', () => {
       ulEl.innerHTML = '';
       makeUsersLiEl(usersSortedByName(userObj));
