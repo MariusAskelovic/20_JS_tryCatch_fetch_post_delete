@@ -29,8 +29,8 @@ function makePostLiEl(arr, destHtmlEl) {
     .map((postObj) => {
       const liEl = document.createElement('li');
       const aEl = document.createElement('a');
-      aEl.href = 'single-post.html';
-      aEl.textContent = postObj.title;
+      aEl.href = 'single-post.html?postId=' + postObj.id;
+      aEl.textContent = postObj.id + '(id)' + postObj.title;
       liEl.append(aEl);
       console.log('liEl ===', liEl);
       return liEl;
