@@ -71,9 +71,3 @@ function localDelete(idToDelete) {
   //   console.log('found ===', foundBtn);
   foundBtn.parentElement.remove();
 }
-
-const url5Users = 'https://dummyjson.com/users?limit=5';
-fetch(url5Users)
-  .then((resp) => resp.json())
-  .then((userObj) => console.log('users === ', userObj.users))
-  .catch((error) => console.log(error));
