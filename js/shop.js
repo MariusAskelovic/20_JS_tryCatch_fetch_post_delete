@@ -26,6 +26,8 @@ function getProducts(arr) {
     const brandEl = document.createElement('p');
     const categEl = document.createElement('p');
     const thumbEl = document.createElement('p');
+    const thumbImgEl = document.createElement('img');
+    const daugiauBtn = document.createElement('a');
 
     idEl.textContent = oneProd.id;
     titleEl.textContent = oneProd.title;
@@ -36,18 +38,24 @@ function getProducts(arr) {
     brandEl.textContent = oneProd.brand;
     categEl.textContent = oneProd.categoty;
     thumbEl.textContent = oneProd.thumbnail;
+    thumbImgEl.src = oneProd.thumbnail;
+    thumbImgEl.alt = `${oneProd.title} product photo`;
+    daugiauBtn.textContent = 'Daugiau';
+    daugiauBtn.href = `single-item.html?id=${oneProd.id}`;
 
-    oneProductDiv.append(
-      idEl,
-      titleEl,
-      priceEl,
-      discPercEl,
-      ratingEl,
-      stockEl,
-      brandEl,
-      categEl,
-      thumbEl
-    );
+    // oneProductDiv.append(
+    //   idEl,
+    //   titleEl,
+    //   priceEl,
+    //   discPercEl,
+    //   ratingEl,
+    //   stockEl,
+    //   brandEl,
+    //   categEl,
+    //   thumbEl
+    // );
+
+    oneProductDiv.append(thumbImgEl, titleEl, priceEl, daugiauBtn);
     productsDivEl.append(oneProductDiv);
   });
 }
